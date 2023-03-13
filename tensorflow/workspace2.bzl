@@ -143,6 +143,7 @@ def _tf_repositories():
         name = "XNNPACK",
         sha256 = "0a7ad183dcb4db36e82c4c24376a28281c30e986bd2d71311e624405229a7618",
         strip_prefix = "XNNPACK-659147817805d17c7be2d60bd7bbca7e780f9c82",
+        patch_file = ["//third_party:0001-XNNPACK-support-32-bit-x86.patch"],
         urls = tf_mirror_urls("https://github.com/google/XNNPACK/archive/659147817805d17c7be2d60bd7bbca7e780f9c82.zip"),
     )
     # LINT.ThenChange(//tensorflow/lite/tools/cmake/modules/xnnpack.cmake)
@@ -165,6 +166,7 @@ def _tf_repositories():
         name = "cpuinfo",
         strip_prefix = "cpuinfo-3dc310302210c1891ffcfb12ae67b11a3ad3a150",
         sha256 = "ba668f9f8ea5b4890309b7db1ed2e152aaaf98af6f9a8a63dbe1b75c04e52cb9",
+        patch_file = ["//third_party:0001-cpuinfo-support-32-bit-x86.patch"],
         urls = tf_mirror_urls("https://github.com/pytorch/cpuinfo/archive/3dc310302210c1891ffcfb12ae67b11a3ad3a150.zip"),
     )
 

@@ -1,0 +1,29 @@
+From 2345756776fa09fd95e29f96f781e15e3b18a61b Mon Sep 17 00:00:00 2001
+From: Hongxu Jia <hongxu.jia@windriver.com>
+Date: Tue, 17 Aug 2021 01:09:53 -0700
+Subject: [PATCH] XNNPACK: support 32 bit x86
+
+Use android_x86 as a workaround to support 32 bit x86
+
+Upstream-Status: Inappropriate [oe specific]
+
+Signed-off-by: Hongxu Jia <hongxu.jia@windriver.com>
+---
+ BUILD.bazel | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/BUILD.bazel b/BUILD.bazel
+index 27ab07c9..f223d2ab 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -8783,7 +8783,6 @@ config_setting(
+ config_setting(
+     name = "android_x86",
+     values = {
+-        "crosstool_top": "//external:android/crosstool",
+         "cpu": "x86",
+     },
+ )
+-- 
+2.30.2
+

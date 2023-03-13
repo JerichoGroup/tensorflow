@@ -206,9 +206,6 @@ config_setting(
         {},
     ),
     values = dict(
-        if_oss(
-            {"crosstool_top": "//external:android/crosstool"},
-        ),
         cpu = "x86",
     ),
     visibility = ["//visibility:public"],

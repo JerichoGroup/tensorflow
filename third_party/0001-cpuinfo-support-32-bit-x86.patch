@@ -1,0 +1,28 @@
+From f5e52b2db5516954dab9026e4f386982c4c3c3a4 Mon Sep 17 00:00:00 2001
+From: Hongxu Jia <hongxu.jia@windriver.com>
+Date: Mon, 19 Sep 2022 00:10:18 -0700
+Subject: [PATCH] cpuinfo: support 32 bit x86
+
+Use android_x86 as a workaround to support 32 bit x86
+
+Upstream-Status: Inappropriate [oe specific]
+Signed-off-by: Hongxu Jia <hongxu.jia@windriver.com>
+---
+ BUILD.bazel | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/BUILD.bazel b/BUILD.bazel
+index 7c002fe..68fd5b5 100644
+--- a/BUILD.bazel
++++ b/BUILD.bazel
+@@ -274,7 +274,6 @@ config_setting(
+ config_setting(
+     name = "android_x86",
+     values = {
+-        "crosstool_top": "//external:android/crosstool",
+         "cpu": "x86",
+     },
+     visibility = ["//visibility:public"],
+-- 
+2.37.1
+
